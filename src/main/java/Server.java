@@ -20,11 +20,16 @@ public class Server {
                     System.out.printf("New connection accepted. Port: %d%n", clientSocket.getPort());
 
                     String name = in.readLine();
-                    out.println(String.format("Greetings, %s! Your port is %d\n", name, clientSocket.getPort()));
+                    out.println(String.format("Greetings, %s! Your port is %d", name, clientSocket.getPort()));
 
+                    out.println("Are you under the age of 18? (yes/no)");
 
-
-
+                    String age = in.readLine();
+                    if (age.equals("yes")) {
+                        out.println(String.format("Access for %s is denied", name));
+                    } else {
+                        out.println(String.format("Access for %s is allowed", name));
+                    }
 
                 }
             }

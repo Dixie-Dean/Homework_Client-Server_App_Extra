@@ -14,9 +14,14 @@ public class Client {
              BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()))
         ) {
             out.println("Dixie Dean");
-
             String response = in.readLine();
+            System.out.println(response);
 
+            response = in.readLine();
+            System.out.println(response);
+
+            out.println("no");
+            response = in.readLine();
             System.out.println(response);
 
         } catch (IOException exception) {
